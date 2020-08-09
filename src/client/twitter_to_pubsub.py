@@ -9,7 +9,6 @@ from tweepy.api import API
 from google.cloud import pubsub
 
 
-
 def get_oauth(creds_file='./creds_file.json'):
     """Gets OAuth handler when given creds file.
 
