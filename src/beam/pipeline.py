@@ -391,7 +391,7 @@ def run(argv=None, save_main_session=True):
             | 'nlp' >> beam.ParDo(NlpClient_ElementWise())
         )
 
-    write_output = (
+    (
         analyze_tweets
         | 'combine_scores' >> beam.CombinePerKey(CombineScores())
         | 'convert_to_dictionary' >> beam.ParDo(DictFormat())
@@ -409,5 +409,5 @@ def run(argv=None, save_main_session=True):
 
 
 if __name__ == '__main__':
-    #logging.getLogger().setLevel(logging.INFO)
+    logging.getLogger().setLevel(logging.INFO)
     run()
